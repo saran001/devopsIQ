@@ -1,4 +1,6 @@
 FROM hshar/webapp
+#Ensure old PID due to previous usage are killed
+RUN rm -f /var/run/apache2/apache2.pid
 ADD ./devopsIQ /var/www/html/devopsIQ
 EXPOSE 80
 EXPOSE 81
